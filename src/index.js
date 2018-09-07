@@ -1,7 +1,7 @@
 'use strict';
 
 function formatData(schema, data) {
-  if (data === undefined || data === null) return data;
+  if (!schema || data === undefined || data === null) return data;
 
   if (schema.type === 'array') return data.map(item => formatData(schema.items, item));
   else if (schema.type === 'object') {
