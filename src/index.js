@@ -6,12 +6,13 @@ function formatData(schema, data) {
   else if (schema.type === 'object') {
     data = data || {};
     return Object.keys(schema.properties).reduce((formatted, key) => {
+      if (!data[key]) return formatted;
       const value = formatData(schema.properties[key], data[key]);
       if (value !== undefined) formatted[key] = value;
       return formatted;
     }, {});
   }
-  
+
   return data === undefined ? schema.default : data;
 }
 
