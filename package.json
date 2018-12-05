@@ -1,6 +1,6 @@
 {
   "name": "json-schema-prune",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Javascript json-schema formatter for stripping properties from data not present in the schema.",
   "main": "lib/index.js",
   "repository": {
